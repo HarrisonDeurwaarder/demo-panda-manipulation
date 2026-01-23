@@ -2,8 +2,8 @@ from isaaclab.envs import DirectRLEnvCfg
 from isaaclab.utils import configclass
 from isaaclab.sim import SimulationCfg
 
-from utils.config import config
 from configs.python.scene_cfg import SceneCfg
+from utils.config import config
 
 
 @configclass
@@ -16,7 +16,6 @@ class EnvironmentCfg(DirectRLEnvCfg):
     episode_length: float = config["env"]["episode_length"]
     action_space: int = config["env"]["action_space"]
     obs_space: int = config["env"]["obs_space"]
-    state_space: int = config["env"]["state_space"]
     
     # Simulation config
     sim: SimulationCfg = SimulationCfg(
