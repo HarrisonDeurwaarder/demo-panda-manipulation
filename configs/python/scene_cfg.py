@@ -10,7 +10,7 @@ from isaaclab.utils import configclass
 
 from isaaclab_assets import FRANKA_PANDA_HIGH_PD_CFG
 
-from utils.config import CONFIG
+from utils.config import config
 
 
 @configclass
@@ -27,8 +27,8 @@ class SceneCfg(InteractiveSceneCfg):
     light: AssetBaseCfg = AssetBaseCfg(
         prim_path="{ENV_REGEX_NS}/Light",
         spawn=sim_utils.DomeLightCfg(
-            intensity=CONFIG["scene"]["light"]["intensity"],
-            color=tuple(CONFIG["scene"]["light"]["color"]),
+            intensity=config["scene"]["light"]["intensity"],
+            color=tuple(config["scene"]["light"]["color"]),
         ),
     )
     # Robot config
@@ -54,20 +54,20 @@ class SceneCfg(InteractiveSceneCfg):
     cuboid: sim_utils.MeshCuboidCfg = sim_utils.DeformableObjectCfg(
         prim_path="{ENV_REGEX_NS}/Cube",
         spawn=sim_utils.MeshCuboidCfg(
-            size=tuple(CONFIG["scene"]["cube"]["size"]),
+            size=tuple(config["scene"]["cube"]["size"]),
             deformable_props=sim_utils.DeformableBodyPropertiesCfg(
-                rest_offset=CONFIG["scene"]["cube"]["rest_offset"],
-                contact_offset=CONFIG["scene"]["cube"]["contact_offset"],
+                rest_offset=config["scene"]["cube"]["rest_offset"],
+                contact_offset=config["scene"]["cube"]["contact_offset"],
             ),
             physics_material=sim_utils.DeformableBodyMaterialCfg(
-                poissons_ratio=CONFIG["scene"]["cube"]["poissons_ratio"],
-                youngs_modulus=CONFIG["scene"]["cube"]["youngs_modulus"],
+                poissons_ratio=config["scene"]["cube"]["poissons_ratio"],
+                youngs_modulus=config["scene"]["cube"]["youngs_modulus"],
             ),
             visual_material=sim_utils.PreviewSurfaceCfg(
-                diffuse_color=tuple(CONFIG["scene"]["cube"]["diffuse_color"]),
+                diffuse_color=tuple(config["scene"]["cube"]["diffuse_color"]),
             ),
         ),
         init_state=DeformableObjectCfg.InitialStateCfg(
-            pos=CONFIG["scene"]["cube"]["pos"],
+            pos=config["scene"]["cube"]["pos"],
         ),
     )
