@@ -10,6 +10,8 @@ This repository shows a simple object manipulation policy using the Franka Emika
 - Simulator: NVIDIA Isaac Sim / IsaacLab
 
 ## Directory Structure
+
+```text
 ├── configs/
 │ ├── python
 │   ├── env_cfg.py     # Environment configuration class
@@ -31,11 +33,12 @@ This repository shows a simple object manipulation policy using the Franka Emika
 ├── .gitignore
 ├── LICENSE
 └── README.md
+```
 
 ## Requirements
 
 - IsaacLab + Isaac Sim installed (https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html)
-- CUDA GPU recommended (NVIDIA 4060 or above)
+- CUDA GPU recommended (RTX 4060 or above)
 
 ## Installation
 - Follow the installation steps for IsaacLab above
@@ -46,7 +49,7 @@ This repository shows a simple object manipulation policy using the Franka Emika
 python scripts/train.py --seed=0
 - The following will run a trained model with seed=1
 python scripts/inference.py --seed=1
-- model/ contains all pre-trained models with the format "franka[SEED].pth"
+- model/ contains all pre-trained models with the format "franka-[SEED].pth"
 All raw configurations are stored at configs/yaml/
 
 ## Task Definition
